@@ -9,7 +9,8 @@ export default class Message extends Component {
     super(props);
     this.state = {
       editting: false,
-      text: this.props.text
+      text: this.props.text,
+      name: this.props.name
     };
 
     this.handleChange = this.handleChange.bind( this );
@@ -30,12 +31,12 @@ export default class Message extends Component {
   }
 
   render() {
-    const { id, text, time, edit, remove } = this.props;
+    const { id, text, name, time, edit, remove } = this.props;
     const { editting } = this.state;
-    console.log( id, text );
+    console.log( id, text, name );
     return (
       <div className="Message__container">
-        <span className="Message__time">{time}</span>
+        <span className="Message__time"></span>
         {
           editting
           ?
